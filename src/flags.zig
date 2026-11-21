@@ -47,7 +47,7 @@ pub const ZLOB_NAME_TOO_LONG = c.ZLOB_NAME_TOO_LONG;
 pub const ZLOB_FLAGS_SHARED_STRINGS: c_int = 0;
 pub const ZLOB_FLAGS_OWNS_STRINGS: c_int = 1 << 0;
 
-pub const ZlobFlags = packed struct(u32) {
+pub const ZlobFlags = bitpack struct(u32) {
     // Standard POSIX glob flags (bits 0-7)
     err: bool = false,
     mark: bool = false,

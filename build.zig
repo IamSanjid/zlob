@@ -40,7 +40,7 @@ pub fn build(b: *std.Build) void {
     // On Android, Zig cannot provide bionic libc headers/libraries for
     // cross-compilation. Android targets use link_libc=false and fall back
     // to std.fs-based iteration (same as Windows MSVC path).
-    const is_android = target.result.abi == .android or target.result.abi == .androideabi;
+    const is_android = target.result.abi == .android;
 
     // On iOS/tvOS/watchOS/visionOS, Zig doesn't ship Apple mobile SDK headers
     // (unlike macOS where headers are bundled). These targets need link_libc=false.

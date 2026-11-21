@@ -58,7 +58,7 @@ const StringHashMap = std.StringHashMap(PatternMatch);
 /// 2-byte gates (one cache line covers 32 patterns) and touches the full
 /// ~100-byte `Pattern` struct only when a gate passes — for typical entries
 /// every pattern is rejected right here.
-pub const WildcardGate = packed struct(u32) {
+pub const WildcardGate = bitpack struct(u32) {
     /// Required last char (valid when `has_rc`).
     rc: u8,
     fc: u8,

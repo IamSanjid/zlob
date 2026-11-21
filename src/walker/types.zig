@@ -83,7 +83,7 @@ pub inline fn closeHandle(h: Handle, io: std.Io) void {
 
 /// Which metadata attributes to fetch per entry. An empty mask means the
 /// walker never stats anything; entry kind still comes free from the listing.
-pub const MetaMask = packed struct(u32) {
+pub const MetaMask = bitpack struct(u32) {
     size: bool = false,
     mtime: bool = false,
     atime: bool = false,
